@@ -7,7 +7,13 @@ import { useRouter } from "next/navigation";
 import { AppNav } from "@/components/AppNav";
 import { useApp } from "@/context/AppContext";
 
+import { ClientOnly } from "@/components/ClientOnly";
+
 export default function ProfilePage() {
+  return <ClientOnly><ProfileContent /></ClientOnly>;
+}
+
+function ProfileContent() {
   const { state, updateCurrentUser, logout } = useApp();
   const router = useRouter();
   const user = state.currentUser;

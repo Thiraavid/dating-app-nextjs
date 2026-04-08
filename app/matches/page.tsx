@@ -6,7 +6,13 @@ import { useRouter } from "next/navigation";
 import { AppNav } from "@/components/AppNav";
 import { useApp } from "@/context/AppContext";
 
+import { ClientOnly } from "@/components/ClientOnly";
+
 export default function MatchesPage() {
+  return <ClientOnly><MatchesContent /></ClientOnly>;
+}
+
+function MatchesContent() {
   const { state } = useApp();
   const router = useRouter();
 

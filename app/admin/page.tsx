@@ -8,7 +8,13 @@ import { useApp } from "@/context/AppContext";
 
 type AdminTab = "overview" | "users" | "reports" | "content";
 
+import { ClientOnly } from "@/components/ClientOnly";
+
 export default function AdminPage() {
+  return <ClientOnly><AdminContent /></ClientOnly>;
+}
+
+function AdminContent() {
   const { state, toggleSuspendUser, approveReport, removeReport } = useApp();
   const [activeTab, setActiveTab] = useState<AdminTab>("overview");
 

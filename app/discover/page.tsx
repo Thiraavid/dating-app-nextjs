@@ -8,7 +8,13 @@ import { AppNav } from "@/components/AppNav";
 import { SwipeCard } from "@/components/SwipeCard";
 import { useApp } from "@/context/AppContext";
 
+import { ClientOnly } from "@/components/ClientOnly";
+
 export default function DiscoverPage() {
+  return <ClientOnly><DiscoverContent /></ClientOnly>;
+}
+
+function DiscoverContent() {
   const { state, likeUser, dislikeUser, updateFilters } = useApp();
   const router = useRouter();
 

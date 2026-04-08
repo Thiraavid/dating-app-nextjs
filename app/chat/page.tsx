@@ -8,7 +8,13 @@ import { AppNav } from "@/components/AppNav";
 import { useApp } from "@/context/AppContext";
 import { generateAIReply } from "@/lib/aiReply";
 
+import { ClientOnly } from "@/components/ClientOnly";
+
 export default function ChatPage() {
+  return <ClientOnly><ChatContent /></ClientOnly>;
+}
+
+function ChatContent() {
   const { state, sendMessage } = useApp();
   const router = useRouter();
   const [selectedId, setSelectedId] = useState<string | null>(state.matches[0]?.id ?? null);
