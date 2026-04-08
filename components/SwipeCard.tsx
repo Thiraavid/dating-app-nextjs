@@ -57,7 +57,7 @@ export function SwipeCard({ profile, onLike, onDislike }: Props) {
 
   const triggerFly = (dir: "left" | "right") => {
     setFlyOut(dir);
-    setTimeout(() => { dir === "right" ? onLike() : onDislike(); }, 350);
+    setTimeout(() => { if (dir === "right") onLike(); else onDislike(); }, 350);
   };
 
   const rotate = dragX / 10;

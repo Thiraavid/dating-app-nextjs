@@ -10,7 +10,7 @@ export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
   const [age, setAge] = useState(18);
-  const { login, signup, state } = useApp();
+  const { login, signup } = useApp();
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
