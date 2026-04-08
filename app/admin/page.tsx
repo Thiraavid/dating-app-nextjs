@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import { useState } from "react";
 import { AppNav } from "@/components/AppNav";
 import { useApp } from "@/context/AppContext";

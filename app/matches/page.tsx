@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import { useRouter } from "next/navigation";
 import { AppNav } from "@/components/AppNav";
 import { useApp } from "@/context/AppContext";
